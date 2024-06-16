@@ -1,0 +1,23 @@
+# This is the problem based on String:
+import sys
+def closest_sum(arr):
+    diff = sys.maxsize
+    res_l,res_r = 0,0
+    l = 0
+    n = len(arr)
+    r = n-1
+    while l < r:
+        sums = arr[l] + arr[r]
+        if abs(sums - x) < diff:
+            res_l = l
+            res_r = r
+            diff = abs(sums - x)
+            
+        if sums > x:
+            r -= 1
+            
+        else:
+            l += 1
+            
+    return res_l,res_r
+
