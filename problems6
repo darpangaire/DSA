@@ -1,0 +1,17 @@
+# merge overlapping intervals
+#TC O(NlogN)
+#SC O(1).
+def merging(arr):
+    index = 0
+    arr.sort(key = lambda x:x[0])
+    for i in range(len(arr)):
+        if arr[index][1] >= arr[i][0]:
+            arr[index][1] = max(arr[index][1],arr[i][1])
+            
+        else:
+            index += 1
+            arr[index] = arr[i]
+            
+    return arr
+arr = [[6, 8], [1, 9], [2, 4], [4, 7]]
+merging(arr)
