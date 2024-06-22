@@ -1,0 +1,26 @@
+# Write a program to reverse an array or string
+def reversed(arr):
+    start = 0
+    end = len(arr)-1
+    while end > start:
+        arr[start],arr[end] = arr[end],arr[start]
+        start +=1 
+        end -= 1
+    return arr
+
+arr = [1,2,3,4,5,6]
+print(reversed(arr))
+
+def recursion(arr,start,end):
+    if start >= end:
+        return arr
+    
+    arr[start],arr[end] = arr[end],arr[start]
+    recursion(arr,start+1,end-1)
+    
+arr = [1,2,3,4,5,6]
+start = 0
+end = len(arr)-1
+recursion(arr,start,end)
+print(arr)
+
