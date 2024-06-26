@@ -1,0 +1,25 @@
+# Count triplets with sum smaller than a given value
+#TC O(N^2)
+# SC O(1).
+def sumTriplets(arr,sums):
+    n = len(arr)
+    arr.sort()
+    leng = 0
+    for i in range(0,n-2):
+        j = i+1
+        k = n-1
+        while j < k:
+            if arr[i]+arr[j]+arr[k] >= sums:
+                k-=1
+                
+            else:
+                leng += (k-j)
+                j += 1
+                
+                
+    return leng
+
+arr = [-2,0,1,3]
+sumTriplets(arr,2)
+
+                
