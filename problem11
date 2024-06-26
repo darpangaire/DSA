@@ -1,0 +1,21 @@
+# reverse the matrix except character.
+def reversing(arr):
+    n = len(arr)
+    l = 0
+    h = n-1
+    c = ['!','$']
+    while h > l:
+        if arr[l] not in c and arr[h] not in c:
+            arr[l],arr[h] = arr[h],arr[l]
+            l += 1
+            h -= 1
+            
+        if arr[l] in c:
+            l += 1
+            
+        else:
+            h -= 1
+    print(arr)
+    
+arr = ['ab','c','de','!','$']
+reversing(arr)
